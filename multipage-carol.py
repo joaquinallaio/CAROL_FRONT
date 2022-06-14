@@ -2,8 +2,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
-from PIL import Image
-import json
 import requests
 from streamlit_lottie import st_lottie
 
