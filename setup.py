@@ -1,17 +1,12 @@
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import setup, find_packages
 
-with open('requirements.txt') as f:
+with open("requirements.txt") as f:
     content = f.readlines()
-requirements = [x.strip() for x in content if 'git+' not in x]
+requirements = [x.strip() for x in content]
 
-setup(name='CAROL_FRONT',
+setup(name="TaxiFareStreamlit",
       version="1.0",
-      description="Project Description",
+      description="taxifare streamlit",
       packages=find_packages(),
-      install_requires=requirements,
-      test_suite='tests',
-      # include_package_data: to install data from MANIFEST.in
-      include_package_data=True,
-      scripts=['scripts/CAROL_FRONT-run'],
-      zip_safe=False)
+      include_package_data=True,  # includes in package files from MANIFEST.in
+      install_requires=requirements)
