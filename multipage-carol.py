@@ -45,8 +45,8 @@ def get_drugs():
     print('get drugs')
     print("ahi vamos")
     params = {"img_file": image.getvalue()}
-    api_url = "https://carol-be-image-s44yr7rzkq-ew.a.run.app/medicines"
-    #api_url = "http://127.0.0.1:8000/medicines"
+    #api_url = "https://carol-be-image-s44yr7rzkq-ew.a.run.app/medicines"
+    api_url = "http://127.0.0.1:8000/medicines"
     res = requests.post(api_url,files=params)
     drugs = res.json()
     spin = True
@@ -78,5 +78,5 @@ if not option == None:
     st.markdown("## 2️⃣Confirmá tus medicamentos acá 👇🏽")
     st.markdown(f'## Seleccionaste: {option}')
     st.markdown(f"## Precio: $ {df[df.description == option]['prices'].iloc[0]}")
-
+    st.markdown(f"## Principio activo: {df[df.description == option]['formula'].iloc[0]}")
     st.button("Comprar")
