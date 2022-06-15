@@ -40,13 +40,13 @@ st.markdown(" ## 1️⃣ Carga tu receta!")
 price = None
 df = None
 spin = False
-@st.cache(show_spinner=False)
+
 def get_drugs():
     print('get drugs')
     print("ahi vamos")
     params = {"img_file": image.getvalue()}
-    #api_url = "https://carol-be-image-s44yr7rzkq-ew.a.run.app/medicines"
-    api_url = "http://127.0.0.1:8000/medicines"
+    api_url = "https://carol-be-image-s44yr7rzkq-ew.a.run.app/medicines"
+    #api_url = "http://127.0.0.1:8000/medicines"
     res = requests.post(api_url,files=params)
     drugs = res.json()
     spin = True
